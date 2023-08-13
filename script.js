@@ -1,20 +1,27 @@
 const moon = document.querySelector('[data-moon]');
 const sun = document.querySelector('[data-sun]');
 const body = document.querySelector('body');
+const input = document.querySelector('[data-search]');
 
 if (localStorage.getItem('mode')) {
     if (localStorage.getItem('mode') == 'light') {
         body.classList.toggle('dark', false);
+        input.classList.toggle('dark', false);
         moon.classList.toggle('hide', false);
         sun.classList.toggle('hide', true);
     }
     else if (localStorage.getItem('mode') == 'dark') {
         body.classList.toggle('dark', true);
+        input.classList.toggle('dark', true);
         moon.classList.toggle('hide', true);
         sun.classList.toggle('hide', false);
     }
 } else {
-    localStorage.setItem('mode', 'dark');
+    localStorage.setItem('mode', 'light');
+    body.classList.toggle('dark', false);
+    input.classList.toggle('dark', false);
+    moon.classList.toggle('hide', false);
+    sun.classList.toggle('hide', true);
 }
 
 moon.addEventListener('click', () => {
@@ -22,6 +29,7 @@ moon.addEventListener('click', () => {
     sun.classList.toggle('hide', false);
     localStorage.setItem('mode', 'dark');
     body.classList.toggle('dark', true);
+    input.classList.toggle('dark', true);
 });
 
 sun.addEventListener('click', () => {
@@ -29,6 +37,7 @@ sun.addEventListener('click', () => {
     moon.classList.toggle('hide', false);
     localStorage.setItem('mode', 'light');
     body.classList.toggle('dark', false);
+    input.classList.toggle('dark', false);
 });
 
 // const searchInput = document.querySelector("[data-search]");
