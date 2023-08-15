@@ -54,12 +54,12 @@ fetch('./data.json')
             const content = template.content.cloneNode(true);
 
             content.children[1].setAttribute('id', anim.id);
-            content.children[1].children[3].setAttribute('id', anim.id);
+            content.children[1].lastElementChild.setAttribute('id', anim.id);
             content.children[0].setAttribute('id', anim.id);
-            content.children[0].children[0].innerText = anim.title
-            content.children[1].children[0].innerText = anim.title
-            content.children[0].children[2].innerText = anim.description
-            content.children[1].children[2].innerText = anim.usage_instructions.join('\n');
+            content.children[0].children[0].innerText = anim.title;
+            content.children[1].children[0].children[0].innerText = anim.title;
+            content.children[0].children[2].innerText = anim.description;
+            content.children[1].children[2].innerHTML = converter.makeHtml(anim.usage_instructions.join('\n'));
 
             list.appendChild(content);
         });

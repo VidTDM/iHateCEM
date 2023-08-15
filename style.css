@@ -15,6 +15,7 @@ body {
   margin: 0;
   background-color: var(--body-background-color);
   --text-color: black;
+  --text-color-lighter: #484a4c;
   --body-background-color: #e5e5e5;
   --box-background-color: #fff;
   --box-background-color-dark: #ccc;
@@ -33,6 +34,7 @@ body::-webkit-scrollbar-thumb {
 
 body.dark {
   --text-color: white;
+  --text-color-lighter: $silver;
   --body-background-color: #2a2b2e;
   --box-background-color: #2e2e2e;
   --box-background-color-dark: #252525;
@@ -148,12 +150,16 @@ form input.dark::-webkit-search-cancel-button {
   font-size: medium;
   color: var(--text-color);
 }
+.modal header {
+  font-size: 2rem;
+}
 .modal button {
   font-size: 2rem;
   color: #b7b5b3;
   background-color: transparent;
   border: none;
   transition: 250ms;
+  margin-left: auto;
 }
 .modal button:hover {
   color: #85827f;
@@ -176,4 +182,13 @@ form input.dark::-webkit-search-cancel-button {
 }
 .switch-modes:hover {
   color: #85827f;
+}
+
+code, pre {
+  background-color: var(--body-background-color);
+  padding: 0.25rem;
+  font-family: monospace;
+  white-space: pre-wrap;
+  color: var(--text-color-lighter);
+  border-radius: 0.25rem;
 }/*# sourceMappingURL=style.css.map */

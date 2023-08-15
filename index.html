@@ -14,16 +14,20 @@
     <body class="">
         <button class="switch-modes" data-sun><i class="fa-solid fa-sun" data-sun></i></button>
         <button class="switch-modes" data-moon><i class="fa-solid fa-moon" data-moon></i></button>
+
         <header>
             <h1 class="">
                 i<span class="hate animate__headShake animate__animated">Hate</span>CEM
             </h1>
         </header>
+
         <form action="">
             <input type="search" placeholder="&#xF002" style="font-family: 'Roboto', FontAwesome" data-search/>
         </form>
+
         <div class="list">
         </div>
+
         <div class="links">
             <a href="amogus"><i class="fa-solid fa-code-pull-request" style="font-size: .85rem;"></i> Contribute</a>
             <span><b>|</b></span>
@@ -39,10 +43,12 @@
                 <p></p>
             </button>
             <dialog class="modal animate__animated animate__fadeInDownBig" id="">
-                <header></header>
+                <header>
+                    <label></label>
+                    <button onclick="closeAnimation(this.parentNode.parentNode.id)" id=""><i class="fa-solid fa-xmark"></i></button>
+                </header>
                 <hr>
                 <p></p>
-                <button onclick="closeAnimation(this.id)" id=""><i class="fa-solid fa-xmark"></i></button>
             </dialog>
         </template>
     </body>

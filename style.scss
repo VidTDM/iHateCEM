@@ -21,6 +21,7 @@ body {
         border-radius: 25rem;
     }
     --text-color: black;
+    --text-color-lighter: #484a4c;
     --body-background-color: #e5e5e5;
     --box-background-color: #fff;
     --box-background-color-dark: #ccc;
@@ -29,6 +30,7 @@ body {
 
 body.dark {
     --text-color: white;
+    --text-color-lighter: $silver;
     --body-background-color: #2a2b2e;
     --box-background-color: #2e2e2e;
     --box-background-color-dark: #252525;
@@ -134,12 +136,16 @@ form {
         font-size: medium;
         color: var(--text-color);
     }
+    header {
+        font-size: 2rem;
+    }
     button {
         font-size: 2rem;
         color: $silver;
         background-color: transparent;
         border: none;
         transition: 250ms;
+        margin-left: auto;
         &:hover { color: $silver-dark; }
     }
 }
@@ -161,4 +167,13 @@ form {
     border: none;
     transition: 250ms;
     &:hover { color: $silver-dark; }
+}
+
+code,pre {
+    background-color: var(--body-background-color);
+    padding: 0.25rem;
+    font-family: monospace;
+    white-space: pre-wrap;
+    color: var(--text-color-lighter);
+    border-radius: 0.25rem;
 }
