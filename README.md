@@ -5,7 +5,7 @@ iHateCEM a game-changing solution for developers and non-developers alike. Are y
 #### TLDR
 [iHateCEM](https://vidtdm.github.io/iHateCEM/) - a CEM animation cheat sheet
 
-## Contribute Regex
+## Contribute Animations
 
 Contribute to this project and make this the largest collection of animations!
 
@@ -23,7 +23,18 @@ Contribute to this project and make this the largest collection of animations!
         "id": "bipedal-walking-animation",
         "title": "Bipedal Walking animation",
         "description": "Animation for walking for 2-legged(bipedal) entities",
-        "usage-instructions": "Yeah, I'm too lazy to write it right now"
+        "usage-instructions": [
+            "To turn head on its `x axis` we have to use the `head_pitch` variable; Which will look like this:",
+            "```json",
+            "\"head.rx\": \"torad(head_pitch)\"",
+            "```",
+            "We have to use the function `torad()` otherwise it will go berserk.",
+            "Same for the `y axis` but instead `head_pitch` we have to use `head_yaw`; Which will look like this:",
+            "```json",
+            "\"head.ry\": \"torad(head_yaw\"",
+            "```",
+            "That's it!"
+        ]
     },
 ```
 
@@ -34,10 +45,10 @@ Contribute to this project and make this the largest collection of animations!
 
 | Property | Definition |
 |------|------------|
-|  id|  this is the slug and also the short name of the animation. cannot contain spaces and only contain url-safe characters|
+|  id|  the short name of the animation. cannot contain spaces and only contain url-safe characters.|
 |  title |  Title of the page. |
-| description  | Silver line under the title |
-| usage-instructions | Proper explaination of where to put which formula where. Written in arrays |
+| description  | Silver line(s) under the title. |
+| usage-instructions | Proper explaination of where to put which formula where. Written in arrays. |
 
 </details>
 
