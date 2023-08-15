@@ -3,25 +3,28 @@ const sun = document.querySelector('[data-sun]');
 const body = document.querySelector('body');
 const input = document.querySelector('[data-search]');
 
-if (localStorage.getItem('mode')) {
-    if (localStorage.getItem('mode') == 'light') {
+switch (localStorage.getItem('mode')) {
+    case 'light':
         body.classList.toggle('dark', false);
         input.classList.toggle('dark', false);
         moon.classList.toggle('hide', false);
         sun.classList.toggle('hide', true);
-    }
-    else if (localStorage.getItem('mode') == 'dark') {
+        break;
+
+    case 'dark':
         body.classList.toggle('dark', true);
         input.classList.toggle('dark', true);
         moon.classList.toggle('hide', true);
         sun.classList.toggle('hide', false);
-    }
-} else {
-    localStorage.setItem('mode', 'light');
-    body.classList.toggle('dark', false);
-    input.classList.toggle('dark', false);
-    moon.classList.toggle('hide', false);
-    sun.classList.toggle('hide', true);
+        break;
+
+    default:
+        localStorage.setItem('mode', 'light');
+        body.classList.toggle('dark', false);
+        input.classList.toggle('dark', false);
+        moon.classList.toggle('hide', false);
+        sun.classList.toggle('hide', true);
+        break;
 }
 
 moon.addEventListener('click', () => {
@@ -39,6 +42,42 @@ sun.addEventListener('click', () => {
     body.classList.toggle('dark', false);
     input.classList.toggle('dark', false);
 });
+
+const converter = new showdown.Converter();
+
+fetch('./data.json')
+    .then(res => res.json())
+    .then(json => {
+        json.forEach(anim => {
+            const list = document.querySelector('.list');
+            const template = document.querySelector('.animation-template');
+            const content = template.content.cloneNode(true);
+
+            content.children[1].setAttribute('id', anim.id);
+            content.children[1].children[3].setAttribute('id', anim.id);
+            content.children[0].setAttribute('id', anim.id);
+            content.children[0].children[0].innerText = anim.title
+            content.children[1].children[0].innerText = anim.title
+            content.children[0].children[2].innerText = anim.description
+            content.children[1].children[2].innerText = anim.usage_instructions.join('\n');
+
+            list.appendChild(content);
+        });
+    });
+
+function openAnimation(id) {
+    const modal = document.querySelector(`dialog\#${id}`);
+    modal.classList.remove('animate__fadeOutDownBig');
+    modal.showModal();
+}
+
+function closeAnimation(id) {
+    const modal = document.querySelector(`dialog\#${id}`);
+    modal.classList.add('animate__fadeOutDownBig');
+    setTimeout(() => {
+        modal.close();
+    }, 250);
+}
 
 // const searchInput = document.querySelector("[data-search]");
 

@@ -101,6 +101,7 @@ form {
 .list {
     margin: auto;
     margin-top: 2rem;
+    margin-bottom: 2rem;
     display: grid;
     grid-auto-rows: 6rem;
     grid-template-columns: 50% 50%;
@@ -108,7 +109,8 @@ form {
     width: 50vw ;
 }
 
-.animation {
+.animation,
+.modal {
     background-color: var(--box-background-color);
     border: 5px solid var(--box-background-color);
     font-size: larger;
@@ -116,10 +118,6 @@ form {
     transition: 250ms;
     box-shadow: 10px 10px 20px 0px #00000080;
     color: var(--text-color);
-    &:hover {
-        background-color: var(--box-background-color-dark);
-        border-color: var(--box-background-color-dark);
-    }
     p {
         font-size: small;
         color: $silver-dark;
@@ -128,6 +126,28 @@ form {
     hr {
         border: 1px solid var(--hr);
         border-radius: 25rem;
+    }
+}
+
+.modal {
+    p {
+        font-size: medium;
+        color: var(--text-color);
+    }
+    button {
+        font-size: 2rem;
+        color: $silver;
+        background-color: transparent;
+        border: none;
+        transition: 250ms;
+        &:hover { color: $silver-dark; }
+    }
+}
+
+.animation {
+    &:hover {
+        background-color: var(--box-background-color-dark);
+        border-color: var(--box-background-color-dark);
     }
 }
 

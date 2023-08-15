@@ -37,7 +37,7 @@ Contribute to this project and make this the largest collection of animations!
 |  id|  this is the slug and also the short name of the animation. cannot contain spaces and only contain url-safe characters|
 |  title |  Title of the page. |
 | description  | Silver line under the title |
-| usage-instructions | Proper explaination of where to put which formula where |
+| usage-instructions | Proper explaination of where to put which formula where. Written in arrays |
 
 </details>
 

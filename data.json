@@ -1,14 +1,37 @@
 [
     {
-        "id": "bipedal-walking-animation",
-        "title": "",
-        "description": "",
-        "usage-instructions": ""
+        "id": "head-animation",
+        "title": "Head Yaw & Pitch animation",
+        "description": "Make smooth animation for mob heads",
+        "usage_instructions": [
+            "To turn head on its `x axis` we have to use the `head_pitch` variable; Which will look like this",
+            "```json",
+            "\"head.rx\": \"torad(head_pitch)\"",
+            "```",
+            "We have to use the function `torad()` otherwise it will go berserk.",
+            "Same for the `y axis` but instead `head_pitch` we have to use `head_yaw`; Which will look like this",
+            "```json",
+            "\"head.ry\": \"torad(head_yaw\"",
+            "```",
+            "That's it!"
+        ]
     },
     {
         "id": "wheel-rotation-animation",
-        "title": "",
-        "description": "",
-        "usage-instructions": ""
+        "title": "Wheel Rotation Animation",
+        "description": "Wheel rotation for minecarts etc.",
+        "usage_instructions": [
+            "For the front wheels we will have to turn it on its `x axis`. We can't animate the turning as it is very complicated(might add it in future).",
+            "```json",
+            "\"front_wheels.rx\": \"limb_swing*x\"",
+            "```",
+            "`x` is a variable you can use to control the speed of the wheels",
+            "You can not multiply it if you wish so.",
+            "Same for the back wheels but remember to keep a separate pivot point!",
+            "```json",
+            "\"back_wheels\": \"limb_swing*x\"",
+            "```",
+            "Done!"
+        ]
     }
 ]

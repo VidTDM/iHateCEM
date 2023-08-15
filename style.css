@@ -111,6 +111,7 @@ form input.dark::-webkit-search-cancel-button {
 .list {
   margin: auto;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   display: grid;
   grid-auto-rows: 6rem;
   grid-template-columns: 50% 50%;
@@ -118,7 +119,8 @@ form input.dark::-webkit-search-cancel-button {
   width: 50vw;
 }
 
-.animation {
+.animation,
+.modal {
   background-color: var(--box-background-color);
   border: 5px solid var(--box-background-color);
   font-size: larger;
@@ -127,20 +129,39 @@ form input.dark::-webkit-search-cancel-button {
   box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5019607843);
   color: var(--text-color);
 }
-.animation:hover {
-  background-color: var(--box-background-color-dark);
-  border-color: var(--box-background-color-dark);
-}
-.animation p {
+.animation p,
+.modal p {
   font-size: small;
   color: #85827f;
 }
-.animation header {
+.animation header,
+.modal header {
   font-size: larger;
 }
-.animation hr {
+.animation hr,
+.modal hr {
   border: 1px solid var(--hr);
   border-radius: 25rem;
+}
+
+.modal p {
+  font-size: medium;
+  color: var(--text-color);
+}
+.modal button {
+  font-size: 2rem;
+  color: #b7b5b3;
+  background-color: transparent;
+  border: none;
+  transition: 250ms;
+}
+.modal button:hover {
+  color: #85827f;
+}
+
+.animation:hover {
+  background-color: var(--box-background-color-dark);
+  border-color: var(--box-background-color-dark);
 }
 
 .switch-modes {
