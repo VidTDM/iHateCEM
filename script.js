@@ -44,11 +44,12 @@ sun.addEventListener('click', () => {
 });
 
 const converter = new showdown.Converter();
+let animations = [];
 
 fetch('./data.json')
     .then(res => res.json())
     .then(json => {
-        json.forEach(anim => {
+        animations = json.map(anim => {
             const list = document.querySelector('.list');
             const template = document.querySelector('.animation-template');
             const content = template.content.cloneNode(true);
@@ -62,6 +63,13 @@ fetch('./data.json')
             content.children[1].children[2].innerHTML = converter.makeHtml(anim.usage_instructions.join('\n'));
 
             list.appendChild(content);
+
+            
+            return {
+                id: anim.id,
+                title: anim.title,
+                description: anim.description,
+            }
         });
     });
 
@@ -79,18 +87,16 @@ function closeAnimation(id) {
     }, 250);
 }
 
-// const searchInput = document.querySelector("[data-search]");
+const searchInput = document.querySelector("[data-search]");
 
-// const animations = [];
 
-// searchInput.addEventListener("input", (e) => {
-//     const value = e.target.value.toLowerCase();
-//     console.log(value);
+searchInput.addEventListener("input", e => {
+    const value = e.target.value.toLowerCase();
 
-//     animations.forEach((animation) => {
-//         const isVisible =
-//             animation.name.toLowerCase().includes(value) ||
-//             animation.description.toLowerCase().includes(value);
-//         user.element.classList.toggle("hide", !isVisible);
-//     });
-// });
+    animations.forEach((anim) => {
+        const isVisible =
+            anim.title.toLowerCase().includes(value) ||
+            anim.description.toLowerCase().includes(value);
+        document.querySelector(`button.animation\#${anim.id}`).classList.toggle('hide', !isVisible);
+    });
+});

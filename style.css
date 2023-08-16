@@ -71,6 +71,7 @@ form input {
   border: #e53e3e 5px solid;
   border-radius: 25rem;
   background-color: var(--box-background-color);
+  color: var(--text-color);
   transition: 250ms;
   width: 100%;
 }

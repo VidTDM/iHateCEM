@@ -64,6 +64,7 @@ form {
         border: $brand-color 5px solid;
         border-radius: 25rem;
         background-color: var(--box-background-color);
+        color: var(--text-color);
         transition: 250ms;
         width: 100%;
         &:focus {
