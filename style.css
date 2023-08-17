@@ -147,6 +147,19 @@ form input.dark::-webkit-search-cancel-button {
   border-radius: 25rem;
 }
 
+.modal {
+  overflow: scroll;
+}
+.modal::-webkit-scrollbar {
+  width: 1rem;
+}
+.modal::-webkit-scrollbar-track {
+  background-color: #dcdbda;
+}
+.modal::-webkit-scrollbar-thumb {
+  background-color: #b7b5b3;
+  border-radius: 25rem;
+}
 .modal p {
   font-size: medium;
   color: var(--text-color);
