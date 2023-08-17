@@ -147,9 +147,6 @@ form input.dark::-webkit-search-cancel-button {
   border-radius: 25rem;
 }
 
-.modal {
-  overflow: scroll;
-}
 .modal::-webkit-scrollbar {
   width: 1rem;
 }
